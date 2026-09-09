@@ -142,14 +142,16 @@ docker compose down
 
 ## Actividades
 Trabajar preferentemente en grupos de 2 estudiantes.
-Elaborar un informe detallado, paso a paso, que explique e incluya capturas de pantalla.
-1. Crear dos contenedores en Docker de acuerdo con la nomenclatura utilizada para realizar la inspección de las interfaces de red, el diagnóstico de conectividad y el trazado de rutas.
-2. Programar un Emisor y un Receptor en el lenguaje de programación Java. (Simplex). 
+Elaborar un informe detallado, paso a paso, que explique e incluya capturas de pantalla (README.md:títulos, subtítulos, párrafos, tablas, imágenes, diagramas, autocalificación, etc.).
+1. Crear dos contenedores en Docker de acuerdo con la nomenclatura utilizada para realizar la inspección de las interfaces de red, el diagnóstico de conectividad y el trazado de rutas (Utilice todos los comandos explicados).
+2. Programar un emisor y un receptor en el lenguaje de programación Java, con tipos de conexiones simplex, dúplex o bidireccionales. Utilizando los ejercicios de las figuras 4.8, 4.9, 4.10, 4.11 y 4.12.
+   a) Pruebas de la comunicación simplex local (utilizando los contenedores en la misma máquina anfitriona).
+   b) Pruebas de la comunicación dúplex en la intranet de la universidad (utilizando los contenedores y la red de area local del laboratorio de computo).
 
 ## Referencias 
 - [Capítulo 1. Primeros pasos con Docker](https://recetas-docker.readthedocs.io/es/latest/capitulo_1.html)
 - [ifconfig(8) - Linux man page](https://linux.die.net/man/8/ifconfig)
 - [ping(8) - Linux man page](https://linux.die.net/man/8/ping)
 - [traceroute(8) - Linux man page](https://linux.die.net/man/8/traceroute)
-- 
+- M. L. Liu. (2004). Computación Distribuida Fundamentos y Aplicaciones. Pearson. 
 
