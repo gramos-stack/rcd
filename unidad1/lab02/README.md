@@ -134,7 +134,7 @@ docker compose down
   ```bash
   mtr google.com
   ```
-- **Ventajas**: No realiza una sola pasada como traceroute, sino que sigue enviando paquetes continuamente a cada salto.
+- **Ventajas**: No realiza una sola pasada como traceroute, sino que sigue enviando paquetes de forma continua a cada salto.
 - **Loss%**: Permite ver con precisión matemática qué router intermedio del proveedor de internet está perdiendo paquetes.
 - **Last/Avg/Best/Wrst**: Estadísticas de latencia (última, promedio, mejor y peor) por cada salto, ideal para detectar picos de lag intermitentes.
 
@@ -144,14 +144,14 @@ docker compose down
 Trabajar preferentemente en grupos de 2 estudiantes.
 Elaborar un informe detallado, paso a paso, que explique e incluya capturas de pantalla (README.md:títulos, subtítulos, párrafos, tablas, imágenes, diagramas, autocalificación, etc.).
 1. Crear dos contenedores en Docker de acuerdo con la nomenclatura utilizada para realizar la inspección de las interfaces de red, el diagnóstico de conectividad y el trazado de rutas (Utilice todos los comandos explicados).
-2. Programar un emisor y un receptor en el lenguaje de programación Java, con tipos de conexiones simplex, dúplex o bidireccionales. Utilizando los ejercicios de las figuras 4.8, 4.9, 4.10, 4.11 y 4.12.
+2. Programar un emisor y un receptor en el lenguaje de programación Java, con tipos de conexión simplex, dúplex o bidireccional. Utilizando los ejercicios de las figuras 4.8, 4.9, 4.10, 4.11 y 4.12 del libro de M. L. Liu. (2004). Computación Distribuida Fundamentos y Aplicaciones.
    a) Pruebas de la comunicación simplex local (utilizando los contenedores en la misma máquina anfitriona).
-   b) Pruebas de la comunicación dúplex en la intranet de la universidad (utilizando los contenedores y la red de area local del laboratorio de computo).
+   b) Pruebas de comunicación dúplex en la intranet de la universidad (utilizando los contenedores y la red de área local del laboratorio de cómputo).
 
 ## Referencias 
 - [Capítulo 1. Primeros pasos con Docker](https://recetas-docker.readthedocs.io/es/latest/capitulo_1.html)
 - [ifconfig(8) - Linux man page](https://linux.die.net/man/8/ifconfig)
 - [ping(8) - Linux man page](https://linux.die.net/man/8/ping)
 - [traceroute(8) - Linux man page](https://linux.die.net/man/8/traceroute)
-- M. L. Liu. (2004). Computación Distribuida Fundamentos y Aplicaciones. Pearson. 
+- [M. L. Liu. (2004). Computación Distribuida Fundamentos y Aplicaciones. Pearson](https://drive.google.com/file/d/1IWbPqprv7DjRywDDr67QuPHK1Y4LZIbX/view?usp=sharing). 
 
