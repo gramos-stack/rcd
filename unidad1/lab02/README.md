@@ -145,8 +145,8 @@ Trabajar preferentemente en grupos de 2 estudiantes.
 Elaborar un informe detallado, paso a paso, que explique e incluya capturas de pantalla (README.md:títulos, subtítulos, párrafos, tablas, imágenes, diagramas, autocalificación, etc.).
 1. Crear dos contenedores en Docker de acuerdo con la nomenclatura utilizada para realizar la inspección de las interfaces de red, el diagnóstico de conectividad y el trazado de rutas (Utilice todos los comandos explicados).
 2. Programar un emisor y un receptor en el lenguaje de programación Java, con tipos de conexión simplex, dúplex o bidireccional. Utilizando los ejercicios de las figuras 4.8, 4.9, 4.10, 4.11 y 4.12 del libro de M. L. Liu. (2004). Computación Distribuida Fundamentos y Aplicaciones.
-   a) Pruebas de la comunicación simplex local (utilizando los contenedores en la misma máquina anfitriona).
-   b) Pruebas de comunicación dúplex en la intranet de la universidad (utilizando los contenedores y la red de área local del laboratorio de cómputo).
+   - a) Pruebas de la comunicación simplex local (utilizando los contenedores en la misma máquina anfitriona).
+   - b) Pruebas de comunicación dúplex en la intranet de la universidad (utilizando los contenedores y la red de área local del laboratorio de cómputo).
 
 ## Rúbrica de Calificación
 
