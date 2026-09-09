@@ -150,8 +150,6 @@ Elaborar un informe detallado, paso a paso, que explique e incluya capturas de p
 
 ## Rúbrica de Calificación
 
-## Rúbrica de Calificación
-
 |   N.º | Criterio de evaluación                              | Excelente                                                                                                                                                         | Bueno                                                                        | En proceso                                                          | Deficiente                                                           |    Puntaje |
 | ----: | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------- | ---------: |
 | **1** | **Inspección y configuración de interfaces de red** | Identifica y explica correctamente interfaces, direcciones IP, máscaras, MAC, estado y configuración mediante `ip a` e `ifconfig`.                                | Identifica correctamente la mayoría de los parámetros de red.                | Ejecuta los comandos, pero presenta poca interpretación.            | No identifica correctamente la configuración de red.                 |  **4 pts** |
