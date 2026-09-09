@@ -148,6 +148,8 @@ Elaborar un informe detallado, paso a paso, que explique e incluya capturas de p
    a) Pruebas de la comunicación simplex local (utilizando los contenedores en la misma máquina anfitriona).
    b) Pruebas de comunicación dúplex en la intranet de la universidad (utilizando los contenedores y la red de área local del laboratorio de cómputo).
 
+## Rúbrica de Calificación
+
 ## Referencias 
 - [Capítulo 1. Primeros pasos con Docker](https://recetas-docker.readthedocs.io/es/latest/capitulo_1.html)
 - [ifconfig(8) - Linux man page](https://linux.die.net/man/8/ifconfig)
