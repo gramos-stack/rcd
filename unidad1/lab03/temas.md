@@ -1,7 +1,6 @@
 # GRUPO 1 — Cableado estructurado y componentes
 Tema: "Introducción al cableado estructurado y componentes de una red LAN"
 
-Deben explicar
 ## 1. ¿Qué es cableado estructurado?
 
 Es un sistema organizado de:
@@ -21,55 +20,29 @@ Es un sistema organizado de:
 - administrable;
 - mantenible.
 
-Esto corresponde al fundamento teórico del laboratorio.
-
 ## 2. Componentes
 
 Deben explicar físicamente:
 
 - Cable UTP
--- Medio físico formado por pares de conductores trenzados.
+  - Medio físico formado por pares de conductores trenzados.
 - RJ-45
-- Conector utilizado para terminar el cable.
+  - Conector utilizado para terminar el cable.
 - Patch cord
-- Cable utilizado para conectar dispositivos.
-
-Keystone
-
-Módulo donde se termina un cable de red.
-
-Faceplate
-
-Placa donde se instala el Keystone.
-
-Patch panel
-
-Elemento donde se organizan las terminaciones provenientes del cableado.
-
-Switch
-
-Interconecta dispositivos dentro de una LAN.
-
-Tester
-
-Permite comprobar continuidad y correspondencia de los conductores.
-
-Estos componentes están expresamente incluidos en el laboratorio.
-
-Demostración
-
-El grupo debe tomar un componente y decir:
-
-"¿Qué es?"
-
-"¿Para qué sirve?"
-
-"¿Dónde se utiliza?"
+  - Cable utilizado para conectar dispositivos.
+- Keystone
+  - Módulo donde se termina un cable de red.
+- Faceplate
+  - Placa donde se instala el Keystone.
+- Patch panel
+  - Elemento donde se organizan las terminaciones provenientes del cableado.
+- Switch
+  - Interconecta dispositivos dentro de una LAN.
+- Tester
+  - Permite comprobar continuidad y correspondencia de los conductores.
 
 # GRUPO 2 — Cable UTP, pares trenzados y categorías
-Tema
-
-"Cable UTP y transmisión de datos"
+Tema: "Cable UTP y transmisión de datos"
 
 Deben explicar
 
