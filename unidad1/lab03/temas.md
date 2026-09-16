@@ -214,6 +214,8 @@ MASTER                  REMOTE
   6 ───────────────────── 6
   7 ───────────────────── 7
   8 ───────────────────── 8
+
+  
 ¿Qué significa un error?
 
 Por ejemplo:
