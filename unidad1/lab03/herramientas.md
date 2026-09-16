@@ -1,10 +1,10 @@
-Herramientas por grupo
+# Herramientas por grupo
 
-| Herramienta            | Cantidad |
-| ---------------------- | -------: |
-| Crimpadora RJ-45       |        1 |
-| Ponchadora tipo 110    |        1 |
-| Pelacables             |        1 |
-| Alicate de corte       |        1 |
-| Regla o cinta métrica  |        1 |
-| Tester de cable de red |        1 |
+| Herramienta            | Cantidad | Cantidad |
+| ---------------------- | -------: | :-------: |
+| Crimpadora RJ-45       |        1 | Obligatorio |
+| Ponchadora tipo 110    |        1 | Recomendable |
+| Pelacables             |        1 | Opcional |
+| Alicate de corte       |        1 | Opcional |
+| Regla o cinta métrica  |        1 | Opcional |
+| Tester de cable de red |        1 | Profesor |
