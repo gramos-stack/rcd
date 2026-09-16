@@ -44,50 +44,43 @@ Deben explicar físicamente:
 # GRUPO 2 — Cable UTP, pares trenzados y categorías
 Tema: "Cable UTP y transmisión de datos"
 
-Deben explicar
+UTP significa: Unshielded Twisted Pair
 
-UTP significa:
-
-Unshielded Twisted Pair
-
-o:
-
-Par Trenzado No Blindado.
+o: Par Trenzado No Blindado.
 
 Un cable convencional contiene cuatro pares:
 
-Par	Colores
-1	Blanco/Naranja – Naranja
-2	Blanco/Verde – Verde
-3	Blanco/Azul – Azul
-4	Blanco/Marrón – Marrón
+| Par | Colores                  |
+| --- | ------------------------ |
+| 1   | Blanco/Naranja – Naranja |
+| 2   | Blanco/Verde – Verde     |
+| 3   | Blanco/Azul – Azul       |
+| 4   | Blanco/Marrón – Marrón   |
 
-¿Por qué están trenzados?
+
+## ¿Por qué están trenzados?
 
 El trenzado ayuda a reducir:
 
-interferencias electromagnéticas;
-diafonía;
-ruido.
-Categorías
+- interferencias electromagnéticas;
+- diafonía;
+- ruido.
+- Categorías
 
 Explicar al menos:
 
-Categoría	Característica general
-Cat 5e	Ethernet hasta 1 Gb/s en condiciones apropiadas
-Cat 6	Mejores características frente a interferencias
-Cat 6A	Diseñada para 10 Gb/s hasta 100 m en condiciones especificadas
+| Categoría | Característica general                                         |
+| --------- | -------------------------------------------------------------- |
+| Cat 5e    | Ethernet hasta 1 Gb/s en condiciones apropiadas                |
+| Cat 6     | Mejores características frente a interferencias                |
+| Cat 6A    | Diseñada para 10 Gb/s hasta 100 m en condiciones especificadas |
 
-El laboratorio advierte que la velocidad real también depende de longitud, componentes, instalación y equipos.
 
-Demostración
+La velocidad real también depende de longitud, componentes, instalación y equipos.
 
-Que el grupo tome un cable y abra aproximadamente 3 cm de cubierta para mostrar físicamente los cuatro pares, tal como pide la práctica.
 
 # GRUPO 3 — T568A, T568B y cables Ethernet
-Tema
-
-"Normas de terminación y elaboración de cables de red"
+Tema: "Normas de terminación y elaboración de cables de red"
 
 Este debería ser uno de los grupos más importantes.
 
@@ -100,6 +93,7 @@ T568A
 6  Naranja
 7  Blanco/Marrón
 8  Marrón
+
 T568B
 1  Blanco/Naranja
 2  Naranja
@@ -140,16 +134,11 @@ T568A ───────── T568A
 Cable cruzado
 T568A ───────── T568B
 
-Demostración
-
-El grupo debe ordenar físicamente ocho hilos delante de sus compañeros.
-
+Ordenar físicamente ocho hilos delante de sus compañeros.
 Después deberá introducirlos en un RJ-45.
 
 # GRUPO 4 — Crimpación, ponchado y tester
-Tema
-
-"Conectorización y comprobación de cables de red"
+Tema: "Conectorización y comprobación de cables de red"
 
 Este grupo debe enseñar cómo fabricar físicamente el cable.
 
@@ -241,8 +230,7 @@ Por ejemplo:
 Esto indica que existe una alteración en el orden de los conductores.
 
 # GRUPO 5 — Keystone, punto de red y conectividad
-Tema
-
+Tema: 
 "Implementación y prueba de un punto de red"
 
 Este grupo debe explicar cómo pasar de un simple cable a una instalación estructurada.
