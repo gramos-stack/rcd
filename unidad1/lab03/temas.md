@@ -1,45 +1,38 @@
-GRUPO 1 — Cableado estructurado y componentes
-Tema
-
-"Introducción al cableado estructurado y componentes de una red LAN"
+# GRUPO 1 — Cableado estructurado y componentes
+Tema: "Introducción al cableado estructurado y componentes de una red LAN"
 
 Deben explicar
-1. ¿Qué es cableado estructurado?
+## 1. ¿Qué es cableado estructurado?
 
 Es un sistema organizado de:
 
-cables;
-conectores;
-puntos de red;
-patch panels;
-patch cords;
-racks;
-dispositivos de red.
+- cables;
+- conectores;
+- puntos de red;
+- patch panels;
+- patch cords;
+- racks;
+- dispositivos de red.
 
-Su objetivo es conseguir una infraestructura:
+## Su objetivo es conseguir una infraestructura:
 
-ordenada;
-escalable;
-administrable;
-mantenible.
+- ordenada;
+- escalable;
+- administrable;
+- mantenible.
 
 Esto corresponde al fundamento teórico del laboratorio.
 
-2. Componentes
+## 2. Componentes
 
 Deben explicar físicamente:
 
-Cable UTP
-
-Medio físico formado por pares de conductores trenzados.
-
-RJ-45
-
-Conector utilizado para terminar el cable.
-
-Patch cord
-
-Cable utilizado para conectar dispositivos.
+- Cable UTP
+-- Medio físico formado por pares de conductores trenzados.
+- RJ-45
+- Conector utilizado para terminar el cable.
+- Patch cord
+- Cable utilizado para conectar dispositivos.
 
 Keystone
 
@@ -73,7 +66,7 @@ El grupo debe tomar un componente y decir:
 
 "¿Dónde se utiliza?"
 
-GRUPO 2 — Cable UTP, pares trenzados y categorías
+# GRUPO 2 — Cable UTP, pares trenzados y categorías
 Tema
 
 "Cable UTP y transmisión de datos"
@@ -118,7 +111,7 @@ Demostración
 
 Que el grupo tome un cable y abra aproximadamente 3 cm de cubierta para mostrar físicamente los cuatro pares, tal como pide la práctica.
 
-GRUPO 3 — T568A, T568B y cables Ethernet
+# GRUPO 3 — T568A, T568B y cables Ethernet
 Tema
 
 "Normas de terminación y elaboración de cables de red"
@@ -180,7 +173,7 @@ El grupo debe ordenar físicamente ocho hilos delante de sus compañeros.
 
 Después deberá introducirlos en un RJ-45.
 
-GRUPO 4 — Crimpación, ponchado y tester
+# GRUPO 4 — Crimpación, ponchado y tester
 Tema
 
 "Conectorización y comprobación de cables de red"
@@ -274,7 +267,7 @@ Por ejemplo:
 
 Esto indica que existe una alteración en el orden de los conductores.
 
-GRUPO 5 — Keystone, punto de red y conectividad
+# GRUPO 5 — Keystone, punto de red y conectividad
 Tema
 
 "Implementación y prueba de un punto de red"
