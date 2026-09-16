@@ -86,7 +86,6 @@ PATCH PANEL
  ▼
 SWITCH
 
-Este es justamente el esquema planteado en el laboratorio.
 
 ## Producto 5 — Cable con falla intencional
 
@@ -104,5 +103,3 @@ qué pin está mal;
 cuál es la falla;
 cuál podría ser la causa;
 cómo solucionarla.
-
-El README contempla fallas como conductor abierto, posición incorrecta, cortocircuito, par invertido, orden incorrecto y mala crimpación.
