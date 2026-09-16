@@ -1,8 +1,8 @@
-2. Productos finales que debe elaborar cada grupo
+# Productos finales que debe elaborar cada grupo
 
-Yo no dejaría el laboratorio solamente como "hacer un cable". Haría que cada grupo entregue productos físicos verificables.
+Cada grupo entrega productos físicos verificables.
 
-Producto 1 — Latiguillo / patch cord artesanal
+## Producto 1 — Latiguillo / patch cord artesanal
 
 Cada grupo debe fabricar:
 
@@ -13,7 +13,7 @@ T568B                         T568B
    │                             │
    └──────── Cable UTP ──────────┘
 
-El README establece precisamente la elaboración de aproximadamente 1 metro y la terminación T568B en ambos extremos.
+La elaboración de aproximadamente 1 metro y la terminación T568B en ambos extremos.
 
 Debe quedar:
 
@@ -30,7 +30,7 @@ y el tester debe mostrar:
 7 → 7
 8 → 8
 
-Producto 2 — Cable cruzado
+## Producto 2 — Cable cruzado
 
 Para reforzar la comprensión de los estándares, cada grupo puede fabricar un segundo cable:
 
@@ -47,9 +47,9 @@ Esto permitirá que los estudiantes comprendan físicamente la diferencia entre:
 cable directo
 cable cruzado.
 
-El README define el cable directo como A-A o B-B y el cruzado como A-B. También aclara que muchos equipos modernos soportan Auto-MDI/MDI-X.
+El cable directo como A-A o B-B y el cruzado como A-B. También aclara que muchos equipos modernos soportan Auto-MDI/MDI-X.
 
-Producto 3 — Terminación en Keystone
+## Producto 3 — Terminación en Keystone
 
 Cada grupo debe realizar:
 
@@ -66,7 +66,7 @@ Cable UTP
 
 La actividad requiere seleccionar el esquema indicado por el fabricante, colocar los conductores y utilizar la ponchadora tipo 110.
 
-Producto 4 — Punto de red
+## Producto 4 — Punto de red
 
 Finalmente, recomiendo que cada grupo arme un pequeño punto de red demostrativo:
 
@@ -88,7 +88,7 @@ SWITCH
 
 Este es justamente el esquema planteado en el laboratorio.
 
-Producto 5 — Cable con falla intencional
+## Producto 5 — Cable con falla intencional
 
 Este producto puede ser muy bueno para evaluar comprensión.
 
