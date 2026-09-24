@@ -57,7 +57,7 @@ RJ-45 (T568B) ───────── Cable UTP ───────── 
 
 ---
 
-### 6.2 Cable cruzado
+### 3.2 Cable cruzado
 
 **¿Qué es?** Un cable con **T568A en un extremo y T568B en el otro**. Al hacerlo entendimos físicamente la diferencia con el directo: en el cruzado, los pares de transmisión y recepción (pines 1-2 y 3-6) quedan intercambiados entre un lado y otro, y por eso el tester no muestra una secuencia recta.
 
@@ -80,7 +80,7 @@ RJ-45 (T568A) ───────── Cable UTP ───────── 
 
 ---
 
-### 6.3 Cable Patch Cord (latiguillo)
+### 3.3 Cable Patch Cord (latiguillo)
 
 **¿Qué es?** Un latiguillo (patch cord) es un cable corto y flexible que se usa para conectar un equipo a la toma de red o para hacer conexiones dentro de un rack. El nuestro mide aproximadamente 1 metro y tiene terminación **T568B en ambos extremos**, por lo que funciona como un cable directo.
 
@@ -102,7 +102,7 @@ RJ-45 (T568B) ───────── Cable UTP ───────── 
 
 ---
 
-### 6.4 Cable Keystone
+### 3.4 Cable Keystone
 
 **¿Qué es?** Es la terminación del cable UTP en un **keystone RJ-45**, la pieza que se instala en la pared o en un patch panel para crear una toma de red. A diferencia de los cables anteriores, aquí no se usa la crimpadora, sino la **ponchadora tipo 110**.
 
@@ -125,7 +125,7 @@ Cable UTP ──► KEYSTONE RJ-45 ──► FACEPLATE
 
 ---
 
-### 6.5 Cableado con error
+### 3.5 Cableado con error
 
 **¿Qué es?** Un cable fabricado **a propósito con una falla**, para que otro grupo use el tester y descubra qué está mal. Sirve para evaluar si realmente entendemos cómo funciona el cable, no solo cómo armarlo.
 
