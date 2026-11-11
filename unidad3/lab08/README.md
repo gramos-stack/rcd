@@ -156,6 +156,7 @@ Para comprobar que toda la red funciona, entré al **Command Prompt** de la **PC
 <img width="682" height="359" alt="PRUEBAS_PING" src="https://github.com/user-attachments/assets/5b692bae-7003-4912-90bc-12024b5ed11d" />
 
 ### Pruebas desde las 8 PCs
+Además de la PC1, hice pruebas de `ping` desde las otras 7 PCs para comprobar que las 4 subredes se comunican bien. Cada PC probó hacia su gateway, hacia otra PC de su misma subred y hacia PCs de otras subredes. En las capturas se ve que todo responde. El único paquete que se pierde es el primero de algunos pings entre subredes distintas, por el ARP. También se nota en el TTL: 255 es el router, 128 es una PC de la misma subred y 127 es una PC de otra subred, porque el paquete pasó por el router.
 <img width="544" height="703" alt="prueba_pc1" src="https://github.com/user-attachments/assets/3212d7ff-b298-41e6-b669-494017f47d2d" />
 
 <img width="499" height="725" alt="prueba_pc2" src="https://github.com/user-attachments/assets/98bb8023-e3d3-41f6-920f-4cc548409fd0" />
