@@ -167,7 +167,8 @@ Para comprobar que toda la red funciona, entré al **Command Prompt** de la **PC
 
 **Resultado de `show ip route`:**
 Ejecuté `show ip route` en el router (`R1#`). En la tabla aparecen las 4 subredes. Cada una sale con la letra "C" (conectada) y la IP del router en esa subred sale con la letra "L" (local). Esto confirma que R1 conoce las 4 subredes y puede enrutar entre ellas.
-<img width="659" height="461" alt="CONFIGURACION_ROUTER" src="https://github.com/user-attachments/assets/e1600e0e-208a-4a64-a989-cdd1d7e08f6b" />
+<img width="641" height="408" alt="route" src="https://github.com/user-attachments/assets/51b5fda5-ce09-45c8-a511-c301becc991f" />
+
 
 ---
 
