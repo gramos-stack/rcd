@@ -145,7 +145,7 @@ Para comprobar la correcta inicialización lógica y física, se empleó el coma
 
 ## 25.5 Pruebas y Resultados
 
-Para garantizar la conectividad integral de la topología, el ruteo inter-VLAN y la comunicación de extremo a extremo, se ingresó al entorno de línea de comandos (**Command Prompt**) de la **PC1** (`192.168.50.10`) y se ejecutaron las tres pruebas exigidas mediante el protocolo ICMP (Ping):
+Para comprobar que toda la red funciona, entré al **Command Prompt** de la **PC1** (`192.168.50.10`) y hice tres pruebas con `ping`:
 
 1. **Ping hacia el router (Default Gateway):**
    Se ejecutó el comando `ping 192.168.50.1`. La respuesta fue inmediata, recibiendo los 4 paquetes (0% de pérdida). Esto confirmó que el enlace físico, la configuración de la subred local y el puerto del router operan correctamente.
@@ -155,9 +155,19 @@ Para garantizar la conectividad integral de la topología, el ruteo inter-VLAN y
    Se ejecutó el comando `ping 192.168.50.40` (dirigido a la PC3 ubicada en la Subred 2). El primer paquete enviado generó un evento de `Request timed out`. Este fenómeno técnico es completamente esperado en el primer intento, y representa el tiempo milimétrico que toma el protocolo ARP (Address Resolution Protocol) en realizar la resolución de direcciones físicas para construir y conocer la ruta hacia un destino remoto desconocido. Los tres paquetes subsiguientes respondieron con éxito (`Reply from 192.168.50.40: bytes=32...`), lo que confirma categóricamente que el router está enrutando paquetes a nivel de Capa 3 de forma correcta.
 <img width="682" height="359" alt="PRUEBAS_PING" src="https://github.com/user-attachments/assets/5b692bae-7003-4912-90bc-12024b5ed11d" />
 
+### Pruebas desde las 8 PCs
+<img width="499" height="725" alt="prueba_pc2" src="https://github.com/user-attachments/assets/98bb8023-e3d3-41f6-920f-4cc548409fd0" />
+<img width="544" height="703" alt="prueba_pc1" src="https://github.com/user-attachments/assets/3212d7ff-b298-41e6-b669-494017f47d2d" />
+<img width="538" height="774" alt="prueba_pc8" src="https://github.com/user-attachments/assets/fac64acd-1a3c-47d2-9e53-1b4c33b3729f" />
+<img width="502" height="727" alt="prueba_pc7" src="https://github.com/user-attachments/assets/145349db-7b66-4400-bb67-9a679508ec9a" />
+<img width="493" height="890" alt="prueba_pc6" src="https://github.com/user-attachments/assets/06f8edf6-7043-4e16-a3bb-9472763e8472" />
+<img width="473" height="749" alt="prueba_pc5" src="https://github.com/user-attachments/assets/3fa5d822-4fa0-427e-a7ae-9e047da6329d" />
+<img width="457" height="722" alt="prueba_pc4" src="https://github.com/user-attachments/assets/e3148bca-353d-41ea-94bd-c6856e262cbc" />
+<img width="503" height="736" alt="prueba_pc3" src="https://github.com/user-attachments/assets/823b64af-f46a-464a-846e-66f79467b8d7" />
 
 **Resultado de `show ip route`:**
-Para constatar la tabla de ruteo, se ejecutó el comando `show ip route` desde el modo EXEC privilegiado del router (`R1#`). Se verificó que la tabla de enrutamiento pobló y registró exitosamente las 4 subredes locales. Estas redes aparecieron identificadas con la letra "C" (Connected) para el segmento de red lógico y la letra "L" (Local) para la interfaz física o virtual específica. Esto demuestra que el dispositivo reconoce y enruta el tráfico a través de todas las fronteras creadas mediante la técnica FLSM.
+Ejecuté `show ip route` en el router (`R1#`). En la tabla aparecen las 4 subredes. Cada una sale con la letra "C" (conectada) y la IP del router en esa subred sale con la letra "L" (local). Esto confirma que R1 conoce las 4 subredes y puede enrutar entre ellas.
+<img width="659" height="461" alt="CONFIGURACION_ROUTER" src="https://github.com/user-attachments/assets/e1600e0e-208a-4a64-a989-cdd1d7e08f6b" />
 
 ---
 
