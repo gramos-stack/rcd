@@ -21,18 +21,18 @@ En el direccionamiento IPv4 tradicional (classful), las redes se categorizan seg
 
 ### Fórmulas utilizadas
 Para este laboratorio se utilizó la técnica de Máscara de Subred de Longitud Fija (FLSM), aplicando las siguientes fórmulas matemáticas:
-1. **Subredes obtenidas:** $S = 2^n$ (donde $n$ = bits prestados de la porción de host).
-2. **Hosts utilizables por subred:** $H = 2^h - 2$ (donde $h$ = bits de host restantes. Se restan 2 porque la primera IP es la dirección de red y la última es el broadcast).
-3. **Nuevo prefijo CIDR:** $Prefijo_{Original} + n$.
-4. **Incremento (Salto de red):** $256 - \text{Valor del octeto modificado en la máscara}$.
+1. **Subredes obtenidas:** S = 2^n (donde n = bits prestados de la porción de host).
+2. **Hosts utilizables por subred:** H = 2^h - 2 (donde h = bits de host restantes. Se restan 2 porque la primera IP es la dirección de red y la última es el broadcast).
+3. **Nuevo prefijo CIDR:** Prefijo_Original + n.
+4. **Incremento (Salto de red):** 256 - Valor del octeto modificado en la máscara.
 
 ### Cálculos de subnetting
 
 **Actividad 1: Subnetting Clase A**
 - **Red:** `10.0.0.0/8` | **Requerimiento:** 16 subredes.
-- **Cálculo de bits:** $2^n \ge 16 \implies n=4$ bits prestados.
+- **Cálculo de bits:** 2^n \ge 16 \implies n=4 bits prestados.
 - **Nueva máscara y prefijo:** `255.240.0.0` (`/12`).
-- **Hosts por subred:** $2^{20} - 2 = 1,048,574$ hosts.
+- **Hosts por subred:** 2^{20} - 2 = 1,048,574 hosts.
 - **Direcciones (Red / Broadcast):**
   1. `10.0.0.0/12` / `10.15.255.255`
   2. `10.32.0.0/12` / `10.47.255.255`
@@ -41,9 +41,9 @@ Para este laboratorio se utilizó la técnica de Máscara de Subred de Longitud 
 
 **Actividad 2: Subnetting Clase B**
 - **Red:** `172.20.0.0/16` | **Requerimiento:** 32 subredes.
-- **Cálculo de bits:** $2^n \ge 32 \implies n=5$ bits prestados.
+- **Cálculo de bits:** 2^n \ge 32 \implies n=5 bits prestados.
 - **Nueva máscara y prefijo:** `255.255.248.0` (`/21`).
-- **Hosts por subred:** $2^{11} - 2 = 2,046$ hosts.
+- **Hosts por subred:** 2^{11} - 2 = 2,046 hosts.
 - **Direcciones (Red / Broadcast):**
   1. `172.20.0.0/21` / `172.20.7.255`
   2. `172.20.8.0/21` / `172.20.15.255`
@@ -52,9 +52,9 @@ Para este laboratorio se utilizó la técnica de Máscara de Subred de Longitud 
 
 **Actividad 3: Subnetting Clase C (Para implementación)**
 - **Red:** `192.168.50.0/24` | **Requerimiento:** 8 subredes.
-- **Cálculo de bits:** $2^n \ge 8 \implies n=3$ bits prestados.
+- **Cálculo de bits:** 2^n \ge 8 \implies n=3 bits prestados.
 - **Nueva máscara y prefijo:** `255.255.255.224` (`/27`).
-- **Hosts por subred:** $2^5 - 2 = 30$ hosts.
+- **Hosts por subred:** 2^5 - 2 = 30 hosts.
 
 ### Tabla de direccionamiento IP (Red 192.168.50.0/24)
 
