@@ -314,14 +314,15 @@ class AplicacionSubneteo:
     def mostrar_mensaje_inicial(self):
         self.resultado.configure(state="normal")
         self.resultado.delete("1.0", "end")
-        self.escribir(
-            "Ingrese los tres datos y presione CALCULAR SUBNETEO.",
+                self.escribir(
+            "Ingrese la red principal y los hosts de cada subred, "
+            "y presione CALCULAR SUBNETEO.",
             "subtitulo"
         )
         self.escribir()
         self.escribir(
-            "El programa calcula los bits prestados para la cantidad "
-            "de subredes y verifica los hosts solicitados.",
+            "El programa ordena los requisitos de mayor a menor y asigna "
+            "a cada subred el bloque mas pequeno que soporte sus hosts.",
             "normal"
         )
         self.resultado.configure(state="disabled")
