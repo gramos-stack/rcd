@@ -138,7 +138,7 @@ def validar_y_calcular(ip_texto, cantidad_subredes, hosts_solicitados):
 class AplicacionSubneteo:
     def __init__(self, ventana):
         self.ventana = ventana
-        self.ventana.title("Sistema de Subneteo IPv4 - FLSM")
+        self.ventana.title("Sistema de Subneteo IPv4 - VLSM")
         self.ventana.geometry("1120x780")
         self.ventana.minsize(850, 600)
         self.ventana.configure(bg="#eef2f7")
