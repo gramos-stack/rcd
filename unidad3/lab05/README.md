@@ -99,7 +99,7 @@ python sistema_subneteo_ipv4.py
 
 5. Presionar **CALCULAR SUBNETEO** para ver los resultados.
 ## EJECUCION VLSM
-![opcional](img/captura1.png)
-![opcional](img/captura2.png)
-![opcional](img/captura3.png)
-![opcional](img/captura4.png)
+![opcional](img/capturasVLSM/captura1.png)
+![opcional](img/capturasVLSM/captura2.png)
+![opcional](img/capturasVLSM/captura3.png)
+![opcional](img/capturasVLSM/captura4.png)
