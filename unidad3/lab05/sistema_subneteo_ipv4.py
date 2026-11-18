@@ -220,7 +220,7 @@ class AplicacionSubneteo:
 
         tk.Label(
             panel,
-            text="Ejemplo: 192.168.1.1/24  |  Subredes: 4  |  Hosts: 62",
+            text="Ejemplo: 192.168.10.0/24  |  Hosts: 100,50,25,2,2",
             bg="white", fg="#64748b",
             font=("Segoe UI", 9)
         ).grid(row=3, column=0, columnspan=6, sticky="w", pady=(10, 0))
