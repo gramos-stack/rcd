@@ -1,4 +1,4 @@
-# Programa - Laboratorio 05
+# Programa - Laboratorio 07
 Este repositorio contiene el desarrollo de nuestro proyecto para el *Laboratorio 05* del curso de Redes. Diseñamos y desarrollamos una aplicación interactiva en *Python* con interfaz gráfica (GUI) utilizando *Tkinter* para realizar cálculos de subneteo IPv4 mediante la técnica *FLSM (Fixed Length Subnet Mask)*.
 
 ---
