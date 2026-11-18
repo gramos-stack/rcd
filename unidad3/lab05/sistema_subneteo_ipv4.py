@@ -467,7 +467,6 @@ class AplicacionSubneteo:
 
     def limpiar(self):
         self.entrada_ip.delete(0, "end")
-        self.entrada_subredes.delete(0, "end")
         self.entrada_hosts.delete(0, "end")
         self.mostrar_mensaje_inicial()
 
