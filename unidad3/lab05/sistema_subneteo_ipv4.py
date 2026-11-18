@@ -377,9 +377,9 @@ class AplicacionSubneteo:
         self.escribir(f'{"Clase:":<16} {obtener_clase(d["ip"])}')
         self.escribir(f'{"Tipo:":<16} {tipo_direccion(d["ip"])}')
 
-        self.escribir()
+                self.escribir()
         self.escribir("=" * 112, "titulo")
-        self.escribir("CALCULO DE BITS PRESTADOS", "titulo")
+        self.escribir("CALCULO DE BITS PRESTADOS (VLSM)", "titulo")
         self.escribir("=" * 112, "titulo")
 
         self.escribir(
@@ -387,50 +387,35 @@ class AplicacionSubneteo:
             "normal"
         )
         self.escribir(
-            f'Bits prestados:       {d["bits_prestados"]} '
-            f'(2^{d["bits_prestados"]} = {d["subredes_posibles"]} subredes posibles)',
-            "prestado"
-        )
-        self.escribir(
-            f'Bits para hosts:      {d["bits_host"]}',
-            "host"
-        )
-        self.escribir(
-            f'Transicion:           /{d["red"].prefixlen} a /{d["nuevo_prefijo"]}'
-        )
-        self.escribir(
-            f'Hosts solicitados:    {d["hosts_solicitados"]}'
-        )
-        self.escribir(
-            f'Hosts disponibles:    {d["hosts_disponibles"]}'
-        )
-
-        self.escribir()
-        self.escribir("MASCARA NUEVA Y WILDCARD", "subtitulo")
-        self.escribir(
-            f'Netmask:   {d["mascara_nueva"]} = /{d["nuevo_prefijo"]}'
-        )
-        self.escribir(
-            f'Wildcard:  {d["wildcard_nueva"]}'
-        )
-        self.escribir(
-            f'Mascara binaria: {bits_mascara(d["nuevo_prefijo"])}'
-        )
-        self.escribir(
-            "Leyenda: 1 = bit de red (incluye bits prestados); "
-            "0 = bit de host.",
+            "Orden de asignacion: de mayor a menor cantidad de hosts.",
             "normal"
         )
+        self.escribir()
+
+        for numero, s in enumerate(d["subredes"], start=1):
+            self.escribir(
+                f'Subred {numero:02d}: {s["hosts_solicitados"]} hosts -> '
+                f'bits de host: {s["bits_host"]} | '
+                f'bits prestados: {s["bits_prestados"]} | '
+                f'/{d["red"].prefixlen} a /{s["prefijo"]} | '
+                f'hosts disponibles: {s["hosts_disponibles"]}',
+                "prestado"
+            )
 
         self.escribir()
         self.escribir("=" * 112, "titulo")
         self.escribir("DISTRIBUCION DE SUBREDES", "titulo")
         self.escribir("=" * 112, "titulo")
 
-        for numero, subred in enumerate(d["subredes"], start=1):
+        for numero, s in enumerate(d["subredes"], start=1):
+            subred = s["red"]
             minimo, maximo = datos_host(subred)
             self.escribir()
-            self.escribir(f"SUBRED {numero:02d}", "subtitulo")
+            self.escribir(
+                f"SUBRED {numero:02d}  (requisito original "
+                f'#{s["original"]}: {s["hosts_solicitados"]} hosts)',
+                "subtitulo"
+            )
             self.escribir("-" * 112, "normal")
 
             filas = [
@@ -448,16 +433,25 @@ class AplicacionSubneteo:
                 )
 
             self.escribir(
+                f'{"Netmask:":<16} {str(s["mascara"]):<22} '
+                f'{ip_binaria(s["mascara"])}'
+            )
+            self.escribir(
+                f'{"Wildcard:":<16} {str(s["wildcard"]):<22} '
+                f'{ip_binaria(s["wildcard"])}'
+            )
+            self.escribir(
                 f'{"Hosts/Net:":<16} {subred.num_addresses - 2}'
             )
             self.escribir(
-                f'{"Prefijo:":<16} /{d["nuevo_prefijo"]}'
+                f'{"Prefijo:":<16} /{s["prefijo"]}'
             )
 
         self.escribir()
         self.escribir("=" * 112, "titulo")
         self.escribir(
-            f'SUBNETEO FINALIZADO: {d["cantidad"]} subred(es) distribuidas.',
+            f'SUBNETEO FINALIZADO: {d["cantidad"]} subred(es) distribuidas. '
+            f'Direcciones libres: {d["direcciones_libres"]}.',
             "prestado"
         )
         self.escribir("=" * 112, "titulo")
