@@ -98,3 +98,8 @@ python sistema_subneteo_ipv4.py
 4. En la ventana, escribir la **IP principal con su prefijo** (por ejemplo `192.168.10.0/24`) y los **hosts por subred separados por coma** (por ejemplo `100,50,25,2,2`).
 
 5. Presionar **CALCULAR SUBNETEO** para ver los resultados.
+## EJECUCION VLSM
+![opcional](img/captura1.png)
+![opcional](img/captura2.png)
+![opcional](img/captura3.png)
+![opcional](img/captura4.png)
