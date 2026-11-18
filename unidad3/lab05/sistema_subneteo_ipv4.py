@@ -172,7 +172,7 @@ class AplicacionSubneteo:
 
         tk.Label(
             encabezado,
-            text="Calculo de bits prestados, mascaras y distribucion FLSM",
+            text="Calculo de mascaras y distribucion VLSM",
             bg="#17365d",
             fg="#dce6f1",
             font=("Segoe UI", 10)
