@@ -194,15 +194,11 @@ class AplicacionSubneteo:
 
         self.entrada_ip = self.crear_campo(
             panel, "IP principal / prefijo",
-            "192.168.1.1/24", 0, 0
-        )
-        self.entrada_subredes = self.crear_campo(
-            panel, "Cantidad de subredes",
-            "4", 0, 2
+            "192.168.10.0/24", 0, 0
         )
         self.entrada_hosts = self.crear_campo(
-            panel, "Hosts por subred",
-            "62", 0, 4
+            panel, "Hosts por subred (separados por coma)",
+            "100,50,25,2,2", 0, 2
         )
 
         botones = tk.Frame(panel, bg="white")
