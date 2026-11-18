@@ -329,10 +329,9 @@ class AplicacionSubneteo:
     def calcular(self):
         try:
             ip_texto = self.entrada_ip.get().strip()
-            cantidad = int(self.entrada_subredes.get())
-            hosts = int(self.entrada_hosts.get())
+            hosts_texto = self.entrada_hosts.get().strip()
 
-            datos = validar_y_calcular(ip_texto, cantidad, hosts)
+            datos = validar_y_calcular(ip_texto, hosts_texto)
             self.mostrar_resultados(datos)
 
         except ValueError as error:
