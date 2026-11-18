@@ -61,73 +61,119 @@ def bits_mascara(prefijo):
     return ".".join(bits[i:i + 8] for i in range(0, 32, 8))
 
 
-def validar_y_calcular(ip_texto, cantidad_subredes, hosts_solicitados):
+def prefijo_para_hosts(hosts):
     """
-    Calcula FLSM:
-    - Se prestan los bits minimos necesarios para crear la cantidad solicitada.
-    - Los bits restantes deben permitir la cantidad de hosts solicitada.
-    - Si no se cumplen ambas condiciones, se informa el error.
+    Devuelve el prefijo del bloque mas pequeno que soporta los hosts
+    solicitados (se reservan 2 direcciones: red y broadcast).
     """
-    interfaz = ipaddress.ip_interface(ip_texto.strip())
+    bits_host = 2
+    while (2 ** bits_host) - 2 < hosts:
+        bits_host += 1
+    return 32 - bits_host
+
+
+def validar_y_calcular(ip_texto, hosts_texto):
+    """
+    Calcula VLSM:
+    - Los requisitos de hosts se ordenan de mayor a menor.
+    - Cada requisito recibe el bloque mas pequeno que lo soporta.
+    - Los bloques se asignan en forma consecutiva dentro de la red principal.
+    - Si no caben todos, se informa el error.
+    """
+    try:
+        interfaz = ipaddress.ip_interface(ip_texto.strip())
+    except ValueError:
+        raise ValueError(
+            "La IP principal no es valida. Use el formato IP/prefijo, "
+            "por ejemplo 192.168.10.0/24."
+        )
     ip = interfaz.ip
     red = interfaz.network
 
     if red.version != 4:
         raise ValueError("Solo se permiten direcciones IPv4.")
 
-    if cantidad_subredes < 1:
-        raise ValueError("La cantidad de subredes debe ser mayor que cero.")
-
-    if hosts_solicitados < 1:
-        raise ValueError("La cantidad de hosts debe ser mayor que cero.")
-
-    # Bits minimos que se deben prestar para obtener las subredes solicitadas.
-    bits_prestados = (cantidad_subredes - 1).bit_length()
-    nuevo_prefijo = red.prefixlen + bits_prestados
-
-    if nuevo_prefijo > 30:
+    if red.prefixlen > 30:
         raise ValueError(
-            "La red no tiene suficientes bits para crear subredes "
+            "La red principal es demasiado pequena para crear subredes "
             "con al menos dos hosts utilizables."
         )
 
-    bits_host = 32 - nuevo_prefijo
-    hosts_disponibles = (2 ** bits_host) - 2
-    subredes_posibles = 2 ** bits_prestados
+    # Lectura de la lista de hosts (separados por coma)
+    partes = [p.strip() for p in hosts_texto.replace(";", ",").split(",")
+              if p.strip()]
+    if not partes:
+        raise ValueError("Ingrese los hosts de cada subred, "
+                         "por ejemplo: 100,50,25,2")
+    try:
+        lista_hosts = [int(p) for p in partes]
+    except ValueError:
+        raise ValueError("Los hosts deben ser numeros enteros separados "
+                         "por comas, por ejemplo: 100,50,25,2")
 
-    if hosts_solicitados > hosts_disponibles:
+    if any(h < 1 for h in lista_hosts):
+        raise ValueError("La cantidad de hosts debe ser mayor que cero.")
+
+    # Se conserva el numero original de cada requisito y se ordena
+    # de mayor a menor cantidad de hosts.
+    requisitos = [
+        {"original": i, "hosts": h, "prefijo": prefijo_para_hosts(h)}
+        for i, h in enumerate(lista_hosts, start=1)
+    ]
+    requisitos.sort(key=lambda r: (-r["hosts"], r["original"]))
+
+    for r in requisitos:
+        if r["prefijo"] < red.prefixlen:
+            raise ValueError(
+                f"El requisito {r['original']} ({r['hosts']} hosts) necesita "
+                f"un bloque /{r['prefijo']}, mayor que la red principal "
+                f"/{red.prefixlen}."
+            )
+
+    necesarias = sum(2 ** (32 - r["prefijo"]) for r in requisitos)
+    if necesarias > red.num_addresses:
         raise ValueError(
-            "No es posible cumplir ambos requisitos con FLSM.\n\n"
-            f"Con {bits_prestados} bits prestados se crean "
-            f"{subredes_posibles} subredes posibles, pero cada una "
-            f"permite {hosts_disponibles} hosts utilizables.\n"
-            f"Se solicitaron {hosts_solicitados} hosts por subred.\n\n"
+            "No es posible cumplir los requisitos con VLSM.\n\n"
+            f"Direcciones necesarias (con bloques CIDR): {necesarias}\n"
+            f"Direcciones disponibles en {red}: {red.num_addresses}\n\n"
             "Se necesita una red principal mas grande o reducir "
-            "la cantidad de subredes/hosts."
+            "la cantidad de hosts."
         )
 
     mascara_original = red.netmask
-    mascara_nueva = ipaddress.IPv4Network(
-        f"0.0.0.0/{nuevo_prefijo}"
-    ).netmask
 
-    subredes = list(red.subnets(new_prefix=nuevo_prefijo))
+    # Asignacion consecutiva de bloques desde la direccion de red
+    puntero = int(red.network_address)
+    subredes = []
+    for r in requisitos:
+        tam = 2 ** (32 - r["prefijo"])
+        puntero = -(-puntero // tam) * tam  # alinear al tamano del bloque
+        subred = ipaddress.IPv4Network((puntero, r["prefijo"]))
+        mascara = subred.netmask
+        subredes.append({
+            "original": r["original"],
+            "hosts_solicitados": r["hosts"],
+            "hosts_disponibles": subred.num_addresses - 2,
+            "prefijo": r["prefijo"],
+            "bits_prestados": r["prefijo"] - red.prefixlen,
+            "bits_host": 32 - r["prefijo"],
+            "mascara": mascara,
+            "wildcard": obtener_wildcard(mascara),
+            "red": subred,
+        })
+        puntero += tam
+
+    usadas = sum(s["red"].num_addresses for s in subredes)
 
     return {
         "ip": ip,
         "red": red,
-        "cantidad": cantidad_subredes,
-        "hosts_solicitados": hosts_solicitados,
-        "bits_prestados": bits_prestados,
-        "bits_host": bits_host,
-        "nuevo_prefijo": nuevo_prefijo,
-        "subredes_posibles": subredes_posibles,
-        "hosts_disponibles": hosts_disponibles,
+        "cantidad": len(subredes),
         "mascara_original": mascara_original,
         "wildcard_original": obtener_wildcard(mascara_original),
-        "mascara_nueva": mascara_nueva,
-        "wildcard_nueva": obtener_wildcard(mascara_nueva),
-        "subredes": subredes[:cantidad_subredes],
+        "subredes": subredes,
+        "direcciones_usadas": usadas,
+        "direcciones_libres": red.num_addresses - usadas,
     }
 
 
