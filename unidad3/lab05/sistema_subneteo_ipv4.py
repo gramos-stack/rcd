@@ -356,7 +356,7 @@ class AplicacionSubneteo:
     def mostrar_mensaje_inicial(self):
         self.resultado.configure(state="normal")
         self.resultado.delete("1.0", "end")
-                self.escribir(
+        self.escribir(
             "Ingrese la red principal y los hosts de cada subred, "
             "y presione CALCULAR SUBNETEO.",
             "subtitulo"
@@ -419,7 +419,7 @@ class AplicacionSubneteo:
         self.escribir(f'{"Clase:":<16} {obtener_clase(d["ip"])}')
         self.escribir(f'{"Tipo:":<16} {tipo_direccion(d["ip"])}')
 
-                self.escribir()
+        self.escribir()
         self.escribir("=" * 112, "titulo")
         self.escribir("CALCULO DE BITS PRESTADOS (VLSM)", "titulo")
         self.escribir("=" * 112, "titulo")
